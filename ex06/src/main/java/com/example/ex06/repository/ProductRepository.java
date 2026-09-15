@@ -1,0 +1,9 @@
+package com.example.ex06.repository;
+
+import com.example.ex06.entity.Member;
+import com.example.ex06.entity.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProductRepository extends JpaRepository<Product, Long> {
+
+}
