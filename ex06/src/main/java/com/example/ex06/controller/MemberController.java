@@ -1,6 +1,5 @@
 package com.example.ex06.controller;
 
-
 import com.example.ex06.entity.Member;
 import com.example.ex06.service.MemberService;
 import lombok.RequiredArgsConstructor;
@@ -23,5 +22,23 @@ public class MemberController {
     @GetMapping("/{id}")
     public Member findById(@PathVariable Long id){
         return memberService.getMember(id);
+    }
+
+    @PostMapping
+    public Member save(@RequestBody Member member){
+        return memberService.save(member);
+    }
+
+    @PutMapping("/{id}")
+    public Member update(
+            @PathVariable Long id,
+            @RequestBody Member member) throws Exception {
+        return memberService.update(id, member);
+    }
+
+    @DeleteMapping("/{id}")
+    public boolean deleteMember(@PathVariable Long id) throws Exception {
+        boolean result = memberService.deleteMember(id);
+        return false;
     }
 }
